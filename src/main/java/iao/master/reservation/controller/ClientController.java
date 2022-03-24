@@ -1,29 +1,46 @@
 package iao.master.reservation.controller;
 
-import iao.master.reservation.dto.ClientDto;
+
 import iao.master.reservation.model.Client;
 import iao.master.reservation.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/clients")
+
 public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    @GetMapping
+    @GetMapping("/clients")
     public List<Client> getAllClients() {
         return clientService.getAllClients();
     }
 
-    public String saveClient(@RequestBody ClientDto clientDto) {
-//        clientService.saveClient(clientDto);
-        return "OK";
+
+    @PostMapping("/clients")
+    public Client saveClient(
+            @RequestBody Client client)
+    {
+        return clientService.saveClient(client);
+    }
+    @PutMapping("/clients/{id}")
+    public Client
+    updateClient(@RequestBody Client client,
+                     @PathVariable("id") Long clientId)
+    {
+        return clientService.updateClient(
+                client, clientId);
+    }
+    @DeleteMapping("/clients/{id}")
+    public String deleteClientById(@PathVariable("id")
+                                               Long clientId)
+    {
+        clientService.deleteClient(
+                clientId);
+
+        return "Deleted Successfully";
     }
 }

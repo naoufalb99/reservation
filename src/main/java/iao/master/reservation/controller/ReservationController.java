@@ -1,22 +1,44 @@
 package iao.master.reservation.controller;
 
 import iao.master.reservation.model.Reservation;
+import iao.master.reservation.model.Reservation;
 import iao.master.reservation.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/reservations")
+
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
-    @GetMapping
+    @GetMapping("/reservations")
     public List<Reservation> getAllReservations() {
         return reservationService.getAllReservations();
+    }
+    @PostMapping("/reservations")
+    public Reservation saveReservation(
+            @RequestBody Reservation reservation)
+    {
+        return reservationService.saveReservation(reservation);
+    }
+    @PutMapping("/reservations/{id}")
+    public Reservation
+    updateReservation(@RequestBody Reservation reservation,
+                  @PathVariable("id") Long reservationId)
+    {
+        return reservationService.updateReservation(
+                reservation, reservationId);
+    }
+    @DeleteMapping("/reservations/{id}")
+    public String deleteReservationById(@PathVariable("id")
+                                            Long reservationId)
+    {
+        reservationService.deleteReservation(
+                reservationId);
+
+        return "Deleted Successfully";
     }
 }
