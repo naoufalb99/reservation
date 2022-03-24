@@ -1,4 +1,4 @@
-package iao.master.reservation.model;
+package iao.KTIRI_BIDARI.reservation.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

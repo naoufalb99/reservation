@@ -1,8 +1,8 @@
-package iao.master.reservation.service.impl;
+package iao.KTIRI_BIDARI.reservation.service.impl;
 
-import iao.master.reservation.model.Facture;
-import iao.master.reservation.repository.FactureRepository;
-import iao.master.reservation.service.FactureService;
+import iao.KTIRI_BIDARI.reservation.model.Facture;
+import iao.KTIRI_BIDARI.reservation.repository.FactureRepository;
+import iao.KTIRI_BIDARI.reservation.service.FactureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

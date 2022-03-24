@@ -1,8 +1,7 @@
-package iao.master.reservation.controller;
+package iao.KTIRI_BIDARI.reservation.controller;
 
-import iao.master.reservation.model.Facture;
-import iao.master.reservation.model.Facture;
-import iao.master.reservation.service.FactureService;
+import iao.KTIRI_BIDARI.reservation.model.Facture;
+import iao.KTIRI_BIDARI.reservation.service.FactureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

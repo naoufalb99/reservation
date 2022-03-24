@@ -1,9 +1,8 @@
-package iao.master.reservation.service.impl;
+package iao.KTIRI_BIDARI.reservation.service.impl;
 
-import iao.master.reservation.model.Voyage;
-import iao.master.reservation.model.Voyage;
-import iao.master.reservation.repository.VoyageRepository;
-import iao.master.reservation.service.VoyageService;
+import iao.KTIRI_BIDARI.reservation.model.Voyage;
+import iao.KTIRI_BIDARI.reservation.repository.VoyageRepository;
+import iao.KTIRI_BIDARI.reservation.service.VoyageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

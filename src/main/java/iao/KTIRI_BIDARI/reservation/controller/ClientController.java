@@ -1,8 +1,8 @@
-package iao.master.reservation.controller;
+package iao.KTIRI_BIDARI.reservation.controller;
 
 
-import iao.master.reservation.model.Client;
-import iao.master.reservation.service.ClientService;
+import iao.KTIRI_BIDARI.reservation.model.Client;
+import iao.KTIRI_BIDARI.reservation.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

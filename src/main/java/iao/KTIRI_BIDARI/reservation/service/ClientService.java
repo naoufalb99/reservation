@@ -1,6 +1,6 @@
-package iao.master.reservation.service;
+package iao.KTIRI_BIDARI.reservation.service;
 
-import iao.master.reservation.model.Client;
+import iao.KTIRI_BIDARI.reservation.model.Client;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

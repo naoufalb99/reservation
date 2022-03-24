@@ -1,4 +1,4 @@
-package iao.master.reservation;
+package iao.KTIRI_BIDARI.reservation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
