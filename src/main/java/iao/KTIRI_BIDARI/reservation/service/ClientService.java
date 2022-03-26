@@ -11,4 +11,5 @@ public interface ClientService {
     List<Client> getAllClients();
     Client updateClient(Client client,Long clientId);
     void deleteClient(Long clientId);
+    Boolean verifyPaiement(String email, Double acompte);
 }

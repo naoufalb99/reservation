@@ -19,27 +19,29 @@ public class VoyageController {
     public List<Voyage> getAllVoyages() {
         return voyageService.getAllVoyages();
     }
+
+    @GetMapping("/voyages/{id}")
+    public Voyage getVoyage(@PathVariable("id") Long voyageId) {
+        return voyageService.getVoyage(voyageId);
+    }
+
     @PostMapping("/voyages")
-    public Voyage saveVoyage(
-            @RequestBody Voyage voyage)
+    public Voyage saveVoyage(@RequestBody Voyage voyage)
     {
         return voyageService.saveVoyage(voyage);
     }
+
     @PutMapping("/voyages/{id}")
     public Voyage
-    updateVoyage(@RequestBody Voyage voyage,
-                      @PathVariable("id") Long voyageId)
+    updateVoyage(@RequestBody Voyage voyage, @PathVariable("id") Long voyageId)
     {
-        return voyageService.updateVoyage(
-                voyage, voyageId);
+        return voyageService.updateVoyage(voyage, voyageId);
     }
-    @DeleteMapping("/voyages/{id}")
-    public String deleteVoyageById(@PathVariable("id")
-                                                Long voyageId)
-    {
-        voyageService.deleteVoyage(
-                voyageId);
 
+    @DeleteMapping("/voyages/{id}")
+    public String deleteVoyageById(@PathVariable("id") Long voyageId)
+    {
+        voyageService.deleteVoyage(voyageId);
         return "Deleted Successfully";
     }
 }

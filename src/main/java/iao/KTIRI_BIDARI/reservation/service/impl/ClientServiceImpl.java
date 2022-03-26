@@ -71,4 +71,14 @@ public class ClientServiceImpl implements ClientService {
     public void deleteClient(Long clientId) {
         clientRepository.deleteById(clientId);
     }
+
+    @Override
+    public Boolean verifyPaiement(String email, Double acompte) {
+        if(email == null || acompte == null) return false;
+        Client client = clientRepository.findFirstByEmail(email);
+        if(client != null && acompte > 0){
+            return  client.getSalaire() / 10 >=acompte;
+        }
+        return false;
+    }
 }

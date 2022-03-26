@@ -19,6 +19,11 @@ public class VoyageServiceImpl implements VoyageService {
     }
 
     @Override
+    public Voyage getVoyage(Long voyageId) {
+        return voyageRepository.findById(voyageId).get();
+    }
+
+    @Override
     public Voyage saveVoyage(Voyage voyage) {
         return voyageRepository.save(voyage);
     }
@@ -33,9 +38,7 @@ public class VoyageServiceImpl implements VoyageService {
         voyage1.setNombrePlace(voyage.getNombrePlace());
         voyage1.setTarif(voyage.getTarif());
 
-
         return voyageRepository.save(voyage1);
-
     }
 
     @Override

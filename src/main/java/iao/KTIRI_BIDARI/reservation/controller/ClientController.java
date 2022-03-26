@@ -19,28 +19,28 @@ public class ClientController {
         return clientService.getAllClients();
     }
 
-
     @PostMapping("/clients")
-    public Client saveClient(
-            @RequestBody Client client)
+    public Client saveClient(@RequestBody Client client)
     {
         return clientService.saveClient(client);
     }
+
     @PutMapping("/clients/{id}")
     public Client
-    updateClient(@RequestBody Client client,
-                     @PathVariable("id") Long clientId)
+    updateClient(@RequestBody Client client, @PathVariable("id") Long clientId)
     {
-        return clientService.updateClient(
-                client, clientId);
+        return clientService.updateClient(client, clientId);
     }
-    @DeleteMapping("/clients/{id}")
-    public String deleteClientById(@PathVariable("id")
-                                               Long clientId)
-    {
-        clientService.deleteClient(
-                clientId);
 
+    @DeleteMapping("/clients/{id}")
+    public String deleteClientById(@PathVariable("id") Long clientId)
+    {
+        clientService.deleteClient(clientId);
         return "Deleted Successfully";
+    }
+
+    @GetMapping("/clients/verify-paiement/{email}/{acompte}")
+    public String verifyPaiement(@PathVariable("email") String email, @PathVariable("acompte") Double acompte) {
+        return clientService.verifyPaiement(email, acompte).toString();
     }
 }
