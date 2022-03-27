@@ -1,6 +1,5 @@
 package iao.KTIRI_BIDARI.reservation.controller;
 
-
 import iao.KTIRI_BIDARI.reservation.model.Voyage;
 
 import iao.KTIRI_BIDARI.reservation.service.VoyageService;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-
 public class VoyageController {
     @Autowired
     private VoyageService voyageService;
@@ -32,8 +30,7 @@ public class VoyageController {
     }
 
     @PutMapping("/voyages/{id}")
-    public Voyage
-    updateVoyage(@RequestBody Voyage voyage, @PathVariable("id") Long voyageId)
+    public Voyage updateVoyage(@RequestBody Voyage voyage, @PathVariable("id") Long voyageId)
     {
         return voyageService.updateVoyage(voyage, voyageId);
     }

@@ -11,6 +11,6 @@ public interface VoyageService {
     List<Voyage> getAllVoyages();
     Voyage getVoyage(Long id);
     Voyage saveVoyage(Voyage voyage);
-    Voyage updateVoyage(Voyage voyage,Long voyageId);
+    Voyage updateVoyage(Voyage voyage, Long voyageId);
     void deleteVoyage(Long voyageId);
 }
